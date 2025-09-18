@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Cafe Prince</title>
+    <link rel="icon" href="images/prince.png" type="image/jpeg">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-image: url('images/slide.gif');
+            background-repeat: repeat;
+            background-size: cover;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 20px;
+            background-color: black;
+            color: white;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: rgba(128, 128, 128, 0.5); /* Transparent gray */
+            border-radius: 5px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: black;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        .address {
+            text-align: center;
+        }
+
+        .social-media img {
+            height: 30px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .checkout-container {
+            max-width: 800px; /* Increased max-width for wider form */
+            margin: 20px auto;
+            padding: 20px;
+            background-color: black;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+        }
+
+        .checkout-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%; /* Full width inputs */
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            box-sizing: border-box; /* Ensure padding and border are included in width */
+        }
+
+        .form-group input[type="submit"] {
+            background-color: black;
+            color: white; /* Changed text color for better visibility */
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background-color: #333; /* Darken button on hover */
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: black;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px;
+        }
+
+        .popup-content button {
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .popup-content button:hover {
+            background-color: #333;
+        }
+
+        .receipt {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+        .receipt p {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <a href="cafe.html">
+                <img src="images/logo.jpg" alt="Cafe Logo">
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="cafe.html">Home</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="checkout-container">
+        <h2>Checkout</h2>
+        <form id="checkout-form" onsubmit="event.preventDefault(); showPopup();">
+            <div class="form-group">
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+            <div class="form-group">
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="4" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="payment">Payment Method</label>
+                <select id="payment" name="payment" required>
+                    <option value="cod">Cash on Delivery</option>
+                    <option value="gcash">GCash</option>
+                    <option value="paymaya">PayMaya</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Place Order">
+            </div>
+        </form>
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <h2>Order Confirmed!</h2>
+            <div class="receipt">
+                <p><strong>Order Date:</strong> <span id="order-date"></span></p>
+                <p><strong>Order Time:</strong> <span id="order-time"></span></p>
+                <p><strong>First Name:</strong> <span id="receipt-fname"></span></p>
+                <p><strong>Last Name:</strong> <span id="receipt-lname"></span></p>
+                <p><strong>Email:</strong> <span id="receipt-email"></span></p>
+                <p><strong>Phone Number:</strong> <span id="receipt-phone"></span></p>
+                <p><strong>Address:</strong> <span id="receipt-address"></span></p>
+                <p><strong>Payment Method:</strong> <span id="receipt-payment"></span></p>
+            </div>
+            <button onclick="redirectToHome()">Continue Shopping</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/logo.jpg" alt="Cafe Logo">
+        </div>
+        <div class="address">
+            Block 21 Lot 4 Italy St. EP Housing Brgy Pinagsama Phase 2, Taguig, Philippines
+            <br><br>
+            0915-895-6883
+            <br><br>
+            cafeprince@gmail.com
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/cafeprinceph.official/" target="_blank">
+                <img src="images/ig.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/cafeprince.ph/" target="_blank">
+                <img src="images/fb.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

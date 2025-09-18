@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Prince</title>
+    <link rel="icon" href="prince.jpg" type="image/jpeg">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            background-color: black;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #5d4037;
+            border-radius: 5px;
+            color: white;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: black;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        .address {
+            text-align: center;
+        }
+
+        .social-media img {
+            height: 30px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .container {
+            position: relative;
+            height: 100vh;
+        }
+
+        .fullscreen-gif {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .auth-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(242, 242, 242, 0.8);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 400px;
+            max-width: 90%;
+            color: black;
+        }
+
+        .auth-title {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: black;
+        }
+
+        .auth-form {
+            width: 100%;
+            max-width: 300px;
+            margin-bottom: 20px;
+        }
+
+        .auth-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .auth-form .form-group label {
+            display: block;
+            font-weight: bold;
+            color: black;
+        }
+
+        .auth-form .form-group input {
+            width: 100%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .auth-form .form-group button {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: none;
+            background-color: black;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Cafe Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="cafe.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="signup.html">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <img src="images/slide.gif" alt="Fullscreen GIF" class="fullscreen-gif">
+        <div class="auth-container">
+            <h2 class="auth-title">Login / Sign Up</h2>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="login-username">Username:</label>
+                    <input type="text" id="login-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password:</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+            <p>Or</p>
+            <form class="auth-form">
+                <div class="form-group">
+                    <label for="signup-username">Username:</label>
+                    <input type="text" id="signup-username" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Sign Up</button>
+                </div>
+            </form>
+        
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="images/logo.jpg" alt="Cafe Logo">
+        </div>
+        <div class="address">
+            Block 21 Lot 4 Italy St. EP Housing Brgy Pinagsama Phase 2, Taguig, Philippines<br>
+            0915-895-6883<br>
+            cafeprince@gmail.com
+        </div>
+       <div class="social-media">
+    <a href="https://www.instagram.com/cafeprinceph.official/" target="_blank">
+        <img src="images/ig.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/cafeprince.ph/" target="_blank">
+        <img src="images/fb.png" alt="Facebook">
+    </a>
+</div>
+
+    </footer>
+
+</body>
+</html>
