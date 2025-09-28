@@ -1,116 +1,51 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+/* ===== PAGE-SPECIFIC STYLES FOR CRAFT ===== */
+/* Craft page background */
+body {
     background-color: #808080;
     color: white;
 }
 
+/* ===== CRAFT-SPECIFIC OVERRIDES ===== */
+/* Craft page header padding adjustment */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 30px 20px;
-    background-color: black;
-    color: white;
 }
 
-.logo img {
-    height: 100px;
-    margin-left: 20px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-}
-
+/* Craft page navigation hover effect */
 nav ul li a:hover {
     background-color: rgba(128, 128, 128, 0.5);
     border-radius: 5px;
 }
 
-.gallery-header {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px 0;
-    background-color: white;
-}
-
-.gallery-header .btn {
-    padding: 10px 20px;
-    background-color: white;
-    color: black;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.2em;
-    text-decoration: none;
-    transition: background-color 0.3s;
-}
-
-.gallery-header .btn:hover {
-    background-color: black;
-    color: white;
-}
-
+/* ===== CRAFT GALLERY LAYOUT ===== */
+/* Gallery section container */
 .gallery {
     padding: 20px;
 }
 
+/* Photo grid - 5 columns for craft products */
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     gap: 20px;
 }
 
+/* Individual craft photo containers */
 .photo {
     background-color: #333;
     padding: 10px;
     border-radius: 5px;
 }
 
+/* Craft images with responsive sizing */
 .photo img {
     width: 100%;
     height: auto;
     border-radius: 5px;
+    transition: transform 0.3s;
 }
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: black;
-    color: #fff;
-}
-
-.footer-logo img {
-    height: 100px;
-    margin-left: 20px;
-}
-
-.address {
-    text-align: center;
-}
-
-.social-media img {
-    height: 30px;
-    cursor: pointer;
-    margin-right: 10px;
+/* Craft photo hover effect */
+.photo:hover img {
+    transform: scale(1.05);
 }

@@ -1,77 +1,26 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+/* ===== PAGE-SPECIFIC STYLES FOR CHECKOUT ===== */
+/* Checkout page background with GIF pattern */
+body {
     background-image: url('../images/slide.gif');
     background-repeat: repeat;
     background-size: cover;
     color: white;
 }
 
+/* ===== CHECKOUT-SPECIFIC OVERRIDES ===== */
+/* Checkout page header padding adjustment */
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 30px 20px;
-    background-color: black;
-    color: white;
 }
 
-.logo img {
-    height: 100px;
-    margin-left: 20px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-}
-
+/* Checkout page navigation hover effect */
 nav ul li a:hover {
     background-color: rgba(128, 128, 128, 0.5);
     border-radius: 5px;
 }
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: black;
-    color: #fff;
-    position: relative;
-    z-index: 2;
-}
-
-.footer-logo img {
-    height: 100px;
-    margin-left: 20px;
-}
-
-.address {
-    text-align: center;
-}
-
-.social-media img {
-    height: 30px;
-    cursor: pointer;
-    margin-right: 10px;
-}
-
+/* ===== CHECKOUT FORM SECTION ===== */
+/* Checkout form container */
 .checkout-container {
     max-width: 800px;
     margin: 20px auto;
@@ -81,41 +30,14 @@ footer {
     border-radius: 5px;
 }
 
+/* Checkout form title */
 .checkout-container h2 {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1em;
-    box-sizing: border-box;
-}
-
-.form-group input[type="submit"] {
-    background-color: black;
-    color: white;
-    cursor: pointer;
-}
-
-.form-group input[type="submit"]:hover {
-    background-color: #333;
-}
-
+/* ===== ORDER CONFIRMATION POPUP ===== */
+/* Popup overlay */
 .popup {
     display: none;
     position: fixed;
@@ -128,6 +50,7 @@ footer {
     align-items: center;
 }
 
+/* Popup content container */
 .popup-content {
     background-color: black;
     padding: 20px;
@@ -135,10 +58,12 @@ footer {
     text-align: center;
 }
 
+/* Popup title */
 .popup-content h2 {
     margin-bottom: 20px;
 }
 
+/* Popup buttons */
 .popup-content button {
     background-color: black;
     color: white;
@@ -153,6 +78,7 @@ footer {
     background-color: #333;
 }
 
+/* Order receipt styling */
 .receipt {
     text-align: left;
     margin-top: 20px;

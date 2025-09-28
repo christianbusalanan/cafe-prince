@@ -1,65 +1,27 @@
-body, html {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: white;
-    color: white;
+/* ===== PAGE-SPECIFIC STYLES FOR SHOP ===== */
+/* Shop page background with GIF pattern */
+body {
     background-image: url('../images/slide.gif');
     background-repeat: repeat;
     background-size: cover;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 20px;
-    background-color: black;
-    color: white;
-    position: relative;
-    z-index: 2;
-}
-
-.logo img {
-    height: 100px;
-    margin-left: 20px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: white;
-    padding: 5px 10px;
-}
-
-nav ul li a:hover {
-    background-color: #5d4037;
-    border-radius: 5px;
+    background-color: white;
     color: white;
 }
 
+/* ===== SHOPPING CART ICON ===== */
+/* Shopping cart container */
 .shopping {
     position: relative;
     text-align: right;
     cursor: pointer;
 }
 
+/* Cart icon styling */
 .shopping img {
     width: 40px;
 }
 
+/* Cart quantity badge */
 .shopping span {
     background: red;
     border-radius: 50%;
@@ -73,31 +35,7 @@ nav ul li a:hover {
     padding: 3px 10px;
 }
 
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 50px 20px;
-    background-color: black;
-    color: #fff;
-    position: relative;
-    z-index: 2;
-}
-
-.footer-logo img {
-    height: 100px;
-    margin-left: 20px;
-}
-
-.address {
-    text-align: center;
-}
-
-.social-media img {
-    height: 30px;
-    cursor: pointer;
-    margin-right: 10px;
-}
+/* ===== PRODUCT LISTING ===== */
 
 .container {
     width: 1000px;
@@ -105,6 +43,7 @@ footer {
     transition: 0.5s;
 }
 
+/* Product grid layout */
 .list {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -113,6 +52,7 @@ footer {
     margin-top: 50px;
 }
 
+/* Individual product item */
 .list .item {
     text-align: center;
     background-color: #DCE0E1;
@@ -122,16 +62,19 @@ footer {
     color: black;
 }
 
+/* Product images */
 .list .item img {
     width: 90%;
     height: 430px;
     object-fit: cover;
 }
 
+/* Product title styling */
 .list .item .title {
     font-weight: 600;
 }
 
+/* Product price styling */
 .list .item .price {
     margin: 10px;
 }
@@ -144,11 +87,13 @@ footer {
     transition: background-color 0.3s;
 }
 
+/* Added to cart button state */
 .list .item .added {
     background-color: #5d4037;
     color: #fff;
 }
 
+/* Confirmation message */
 .confirmation {
     display: none;
     background-color: #5d4037;
@@ -158,6 +103,8 @@ footer {
     border-radius: 5px;
 }
 
+/* ===== SHOPPING CART SIDEBAR ===== */
+/* Cart sidebar container */
 .card {
     position: fixed;
     top: 0;
@@ -168,14 +115,17 @@ footer {
     transition: 0.5s;
 }
 
+/* Active cart state - slide in from right */
 .active .card {
     left: calc(100% - 500px);
 }
 
+/* Push main content when cart is active */
 .active .container {
     transform: translateX(-200px);
 }
 
+/* Cart header */
 .card h1 {
     color: #E8BC0E;
     font-weight: 100;
@@ -186,6 +136,7 @@ footer {
     align-items: center;
 }
 
+/* Cart checkout section */
 .card .checkOut {
     position: absolute;
     bottom: 0;
@@ -194,6 +145,7 @@ footer {
     grid-template-columns: repeat(2, 1fr);
 }
 
+/* Checkout buttons */
 .card .checkOut div {
     background-color: #E8BC0E;
     width: 100%;
@@ -205,11 +157,13 @@ footer {
     cursor: pointer;
 }
 
+/* Close cart button styling */
 .card .checkOut div:nth-child(2) {
     background-color: #1C1F25;
     color: #fff;
 }
 
+/* Cart item list styling */
 .listCard li {
     display: grid;
     grid-template-columns: 100px repeat(3, 1fr);
@@ -217,21 +171,25 @@ footer {
     row-gap: 10px;
 }
 
+/* Cart item content alignment */
 .listCard li div {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+/* Cart item images */
 .listCard li img {
     width: 90%;
 }
 
+/* Cart item buttons */
 .listCard li button {
     background-color: #fff5;
     border: none;
 }
 
+/* Quantity counter styling */
 .listCard .count {
     margin: 0 10px;
 }

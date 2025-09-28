@@ -1,0 +1,244 @@
+/* ===== GLOBAL STYLES ===== */
+/* Reset and base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* ===== HEADER STYLES ===== */
+/* Main header container */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 20px;
+    background-color: black;
+    color: white;
+    position: relative;
+    z-index: 2;
+}
+
+/* Logo styling */
+.logo img {
+    height: 100px;
+    margin-left: 20px;
+}
+
+/* ===== NAVIGATION STYLES ===== */
+/* Navigation list container */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Navigation list items */
+nav ul li {
+    display: inline;
+}
+
+/* Navigation links */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    transition: background-color 0.3s;
+}
+
+/* Navigation link hover effects */
+nav ul li a:hover {
+    background-color: #5d4037;
+    border-radius: 5px;
+    color: white;
+}
+
+/* ===== FOOTER STYLES ===== */
+/* Main footer container */
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px 20px;
+    background-color: black;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+}
+
+/* Footer logo styling */
+.footer-logo img {
+    height: 100px;
+    margin-left: 20px;
+}
+
+/* Footer address section */
+.address {
+    text-align: center;
+}
+
+/* Social media icons */
+.social-media img {
+    height: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: opacity 0.3s;
+}
+
+.social-media img:hover {
+    opacity: 0.8;
+}
+
+/* ===== GALLERY STYLES ===== */
+/* Gallery header navigation */
+.gallery-header {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 0;
+    background-color: white;
+}
+
+/* Gallery navigation buttons */
+.gallery-header .btn {
+    padding: 10px 20px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2em;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+/* Gallery button hover effects */
+.gallery-header .btn:hover {
+    background-color: black;
+    color: white;
+}
+
+/* ===== FORM STYLES ===== */
+/* Form group container */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Form inputs, selects, and textareas */
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    box-sizing: border-box;
+}
+
+/* Submit buttons */
+.form-group input[type="submit"],
+.form-group button {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group input[type="submit"]:hover,
+.form-group button:hover {
+    background-color: #333;
+}
+
+/* ===== UTILITY CLASSES ===== */
+/* Text alignment utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+/* Color utilities */
+.text-white {
+    color: white;
+}
+
+.text-black {
+    color: black;
+}
+
+/* Background utilities */
+.bg-white {
+    background-color: white;
+}
+
+.bg-black {
+    background-color: black;
+}
+
+/* Spacing utilities */
+.mt-20 {
+    margin-top: 20px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.p-20 {
+    padding: 20px;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+/* Mobile styles */
+@media (max-width: 768px) {
+    /* Adjust header for mobile */
+    header {
+        flex-direction: column;
+        padding: 15px;
+    }
+    
+    /* Stack navigation items on mobile */
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
+    }
+    
+    /* Adjust footer for mobile */
+    footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    /* Adjust logo size for mobile */
+    .logo img,
+    .footer-logo img {
+        height: 60px;
+        margin-left: 0;
+    }
+    
+    /* Adjust gallery header for mobile */
+    .gallery-header {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
