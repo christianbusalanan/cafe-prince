@@ -348,8 +348,8 @@ Mobile breakpoint at 768px with adjustments for:
 - GitHub: @lr.jbtan@mmdc.mcl.edu.ph
   
 **John vincent Tapec**
--GitHub: @lr.jvtapec@mmdc.mcl.edu.ph
+- GitHub: @lr.jvtapec@mmdc.mcl.edu.ph
 
 **Mikko Jerome Bautista**
--GitHub: @lr.mjbautista@mmdc.mcl.edu.ph
+- GitHub: @lr.mjbautista@mmdc.mcl.edu.ph
 
