@@ -337,7 +337,7 @@ Mobile breakpoint at 768px with adjustments for:
 
 **Christian Busalanan**
 - GitHub: [@christianbusalanan](https://github.com/christianbusalanan)
-- GitHub: @dim00moo https://github.com/dim00moo
+- GitHub: https://github.com/dim00moo
 - 
 
 ## Key Takeaways
