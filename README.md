@@ -337,14 +337,19 @@ Mobile breakpoint at 768px with adjustments for:
 
 **Christian Busalanan**
 - GitHub: @lr.cnbusalanan@mmdc.mcl.edu.ph
+
 **Aleczandra Tulod**
 - GitHub: @lr.atulod@mmdc.mcl.edu.ph
+
 **Christenne Jsele Herrera**
 - GitHub: @lr.cjherrera@mmdc.mcl.edu.ph
+  
 **Jason Bryan Tan**
 - GitHub: @lr.jbtan@mmdc.mcl.edu.ph
+  
 **John vincent Tapec**
 -GitHub: @lr.jvtapec@mmdc.mcl.edu.ph
+
 **Mikko Jerome Bautista**
 -GitHub: @lr.mjbautista@mmdc.mcl.edu.ph
 
