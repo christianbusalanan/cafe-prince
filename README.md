@@ -336,16 +336,15 @@ Mobile breakpoint at 768px with adjustments for:
 ## Developer
 
 **Christian Busalanan**
-- GitHub: [@christianbusalanan](https://github.com/christianbusalanan)
-- GitHub: https://github.com/dim00moo
-- 
-
-## Key Takeaways
-
-This project demonstrates:
-- **Modular CSS Architecture**: Separation of global and page-specific styles
-- **Code Organization**: Proper file structure with dedicated directories
-- **Comprehensive Comments**: Clear documentation throughout CSS files
-- **Responsive Design**: Mobile-first approach with breakpoints
-- **Maintainability**: Easy to update and extend codebase
+- GitHub: @lr.cnbusalanan@mmdc.mcl.edu.ph
+**Aleczandra Tulod**
+- GitHub: @lr.atulod@mmdc.mcl.edu.ph
+**Christenne Jsele Herrera**
+- GitHub: @lr.cjherrera@mmdc.mcl.edu.ph
+**Jason Bryan Tan**
+- GitHub: @lr.jbtan@mmdc.mcl.edu.ph
+**John vincent Tapec**
+-GitHub: @lr.jvtapec@mmdc.mcl.edu.ph
+**Mikko Jerome Bautista**
+-GitHub: @lr.mjbautista@mmdc.mcl.edu.ph
 
