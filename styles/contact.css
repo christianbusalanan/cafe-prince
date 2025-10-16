@@ -1,16 +1,14 @@
 /* ===== PAGE-SPECIFIC STYLES FOR CONTACT ===== */
 /* Contact page background */
 body {
-    background-color: white;
-    color: white;
+    background-color: #f2f2f2;
+    color: black;
 }
 
 /* ===== CONTACT INFORMATION SECTION ===== */
 /* Contact info container */
 .contact-container {
     padding: 50px 20px;
-    background-color: #f2f2f2;
-    color: black;
 }
 
 /* Contact info layout */
@@ -39,10 +37,10 @@ body {
 .rating-container {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 25px;
     padding: 50px 20px;
-    background-color: #f2f2f2;
-    color: black;
+    flex-wrap: wrap;
 }
 
 /* Rating and review containers */

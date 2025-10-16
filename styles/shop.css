@@ -67,6 +67,7 @@ body {
     width: 90%;
     height: 430px;
     object-fit: cover;
+    border-radius: 5px;
 }
 
 /* Product title styling */
@@ -77,6 +78,8 @@ body {
 /* Product price styling */
 .list .item .price {
     margin: 10px;
+    font-weight: bold;
+    color: #5d4037;
 }
 
 .list .item button {
