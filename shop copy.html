@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Prince</title>
+    <link rel="icon" href="prince.png" type="image/jpeg">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: white;
+            background-image: url('slide.gif');
+            background-repeat: repeat;
+            background-size: cover;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            background-color: black;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #5d4037;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .shopping {
+            position: relative;
+            text-align: right;
+            cursor: pointer;
+        }
+
+        .shopping img {
+            width: 40px;
+        }
+
+        .shopping span {
+            background: red;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            position: absolute;
+            top: -5px;
+            left: 80%;
+            padding: 3px 10px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: black;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        .address {
+            text-align: center;
+        }
+
+        .social-media img {
+            height: 30px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .container {
+            width: 1000px;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .list {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            column-gap: 20px;
+            row-gap: 20px;
+            margin-top: 50px;
+        }
+
+        .list .item {
+            text-align: center;
+            background-color: #DCE0E1;
+            padding: 20px;
+            box-shadow: 0 50px 50px #757676;
+            letter-spacing: 1px;
+			color: black;
+        }
+
+        .list .item img {
+            width: 90%;
+            height: 430px;
+            object-fit: cover;
+        }
+
+        .list .item .title {
+            font-weight: 600;
+        }
+
+        .list .item .price {
+            margin: 10px;
+        }
+
+        .list .item button {
+            background-color: #1C1F25;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            transition: background-color 0.3s;
+        }
+
+        .list .item .added {
+            background-color: #5d4037;
+            color: #fff;
+        }
+
+        .confirmation {
+            display: none;
+            background-color:  #5d4037;
+            color: white;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+        }
+
+        .card {
+            position: fixed;
+            top: 0;
+            left: 100%;
+            width: 500px;
+            background-color: black;
+            height: 100vh;
+            transition: 0.5s;
+        }
+
+        .active .card {
+            left: calc(100% - 500px);
+        }
+
+        .active .container {
+            transform: translateX(-200px);
+        }
+
+        .card h1 {
+            color: #E8BC0E;
+            font-weight: 100;
+            margin: 0;
+            padding: 0 20px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .card .checkOut {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .card .checkOut div {
+            background-color: #5d4037;
+            width: 100%;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .card .checkOut .total {
+            background-color: #1C1F25;
+            color: #fff;
+        }
+
+        .listCard li {
+            display: grid;
+            grid-template-columns: 100px repeat(3, 1fr);
+            color: #fff;
+            row-gap: 10px;
+        }
+
+        .listCard li div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .listCard li img {
+            width: 90%;
+        }
+
+        .listCard li button {
+            background-color: #fff5;
+            border: none;
+        }
+
+        .listCard .count {
+            margin: 0 10px;
+        }
+
+        .warning {
+            display: none;
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Cafe Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="cafe.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li class="shopping">
+                    <img src="cart.jpg">
+                    <span class="quantity">0</span>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="list"></div>
+    </div>
+    <div class="card">
+        <h1>Cart</h1>
+        <ul class="listCard"></ul>
+        <div class="checkOut">
+            <div class="total" onclick="redirectToCheckout()">Total: 0</div>
+            <div class="closeShopping">Close</div>
+        </div>
+        <div class="warning">Add an item to the cart</div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.jpg" alt="Cafe Logo">
+        </div>
+        <div class="address">
+            Block 21 Lot 4 Italy St. EP Housing Brgy Pinagsama Phase 2, Taguig, Philippines
+            <br>
+            <br>
+            0915-895-6883
+            <br>
+            <br>
+            cafeprince@gmail.com
+        </div>
+        <div class="social-media">
+            <a href="https://www.instagram.com/cafeprinceph.official/" target="_blank">
+                <img src="ig.png" alt="Instagram">
+            </a>
+            <a href="https://www.facebook.com/cafeprince.ph/" target="_blank">
+                <img src="fb.png" alt="Facebook">
+            </a>
+        </div>
+    </footer>
+
+    <script>
+        let openShopping = document.querySelector('.shopping');
+        let closeShopping = document.querySelector('.closeShopping');
+        let list = document.querySelector('.list');
+        let listCard = document.querySelector('.listCard');
+        let body = document.querySelector('body');
+        let total = document.querySelector('.total');
+        let quantity = document.querySelector('.quantity');
+        let warning = document.querySelector('.warning');
+
+        openShopping.addEventListener('click', () => {
+            body.classList.add('active');
+        });
+        closeShopping.addEventListener('click', () => {
+            body.classList.remove('active');
+        });
+
+        let products = [
+            {
+                id: 1,
+                name: 'Spanish Latte',
+                image: 'list1.PNG',
+                price: 125
+            },
+            {
+                id: 2,
+                name: 'Matcha Latte',
+                image: 'list2.PNG',
+                price: 125
+            },
+            {
+                id: 3,
+                name: 'White Mocha',
+                image: 'list3.PNG',
+                price: 125
+            },
+            {
+                id: 4,
+                name: 'Americano',
+                image: 'list4.PNG',
+                price: 125
+            },
+            {
+                id: 5,
+                name: 'Mocha',
+                image: 'list5.PNG',
+                price: 125
+            },
+            {
+                id: 6,
+                name: 'Latte',
+                image: 'list6.PNG',
+                price: 125
+            },
+            // Adding 16 more products
+            {
+                id: 7,
+                name: 'Caramel Macchiato',
+                image: 'list7.PNG',
+                price: 130
+            },
+            {
+                id: 8,
+                name: 'Hibiscus Tea',
+                image: 'list8.PNG',
+                price: 125
+            },
+            {
+                id: 9,
+                name: 'White Chocolate',
+                image: 'list9.PNG',
+                price: 125
+            },
+            {
+                id: 10,
+                name: 'Strawberry Milk',
+                image: 'list10.PNG',
+                price: 125
+				},
+            {
+                id: 11,
+                name: 'Vanilla Cold Brew',
+                image: 'list11.PNG',
+                price: 150
+            },
+            {
+                id: 12,
+                name: 'Hazelnut Latte',
+                image: 'list12.PNG',
+                price: 110
+            },
+            {
+                id: 13,
+                name: 'Hazelnut Mocha Macchiato',
+                image: 'list13.PNG',
+                price: 100
+            },
+            {
+                id: 14,
+                name: 'Black Tea Strawberry',
+                image: 'list14.PNG',
+                price: 140
+            },
+            {
+                id: 15,
+                name: 'Golden CarMach',
+                image: 'list15.PNG',
+                price: 150
+            },
+            {
+                id: 16,
+                name: 'Barista Drink',
+                image: 'list16.PNG',
+                price: 130
+            },
+            {
+                id: 17,
+                name: 'Chocolate Chip Cookie',
+                image: 'list17.PNG',
+                price: 40
+            },
+            {
+                id: 18,
+                name: 'Chocolate Marshmallow Cookie',
+                image: 'list18.PNG',
+                price: 45
+            },
+            {
+                id: 19,
+                name: 'White Chocolate Macadamia Cookie',
+                image: 'list19.PNG',
+                price: 45
+            },
+            {
+                id: 20,
+                name: 'Red Velvet Cookie',
+                image: 'list20.PNG',
+                price: 45
+            },
+            {
+                id: 21,
+                name: 'Double Choco Cookie',
+                image: 'list21.PNG',
+                price: 45
+            },
+            {
+                id: 22,
+                name: 'Matcha Almond Cookie',
+                image: 'list22.PNG',
+                price: 45
+            }
+        ];
+
+        let listCards = [];
+
+        function initApp() {
+            products.forEach((value, key) => {
+                let newDiv = document.createElement('div');
+                newDiv.classList.add('item');
+                newDiv.innerHTML = `
+                    <img src="${value.image}">
+                    <div class="title">${value.name}</div>
+                    <div class="price">${value.price.toLocaleString()}</div>
+                    <button onclick="addToCart(${key}, this)">Add To Cart</button>
+                    <div class="confirmation">Added to Cart</div>`;
+                list.appendChild(newDiv);
+            });
+        }
+
+        function addToCart(key, btn) {
+            if (listCards[key] == null) {
+               
+                listCards[key] = JSON.parse(JSON.stringify(products[key]));
+                listCards[key].quantity = 1;
+            } else {
+                listCards[key].quantity++;
+            }
+
+            reloadCart();
+
+            
+            btn.classList.add('added');
+            btn.nextElementSibling.style.display = 'block';
+
+            
+            setTimeout(() => {
+                btn.nextElementSibling.style.display = 'none';
+            }, 2000);
+        }
+
+        function reloadCart() {
+            listCard.innerHTML = '';
+            let count = 0;
+            let totalPrice = 0;
+
+            listCards.forEach((value, key) => {
+                totalPrice += value.price * value.quantity;
+                count += value.quantity;
+
+                let newDiv = document.createElement('li');
+                newDiv.innerHTML = `
+                    <div><img src="${value.image}"></div>
+                    <div>${value.name}</div>
+                    <div>${(value.price * value.quantity).toLocaleString()}</div>
+                    <div>
+                        <button onclick="changeQuantity(${key}, ${value.quantity - 1})">-</button>
+                        <div class="count">${value.quantity}</div>
+                        <button onclick="changeQuantity(${key}, ${value.quantity + 1})">+</button>
+                    </div>`;
+                listCard.appendChild(newDiv);
+            });
+
+            total.innerText = `Total: ${totalPrice.toLocaleString()}`;
+            quantity.innerText = count;
+        }
+
+        function changeQuantity(key, quantity) {
+            if (quantity <= 0) {
+                delete listCards[key];
+            } else {
+                listCards[key].quantity = quantity;
+            }
+
+            reloadCart();
+        }
+
+        function redirectToCheckout() {
+            let totalAmount = parseInt(total.innerText.split(':')[1].trim().replace(/,/g, ''));
+            if (totalAmount === 0) {
+                warning.style.display = 'block';
+                setTimeout(() => {
+                    warning.style.display = 'none';
+                }, 2000);
+                return;
+            }
+            window.location.href = 'checkout.html'; 
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            initApp();
+        });
+    </script>
+</body>
+</html>

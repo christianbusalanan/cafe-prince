@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Prince</title>
+    <!-- Add the link to your favicon -->
+    <link rel="icon" href="prince.png" type="image/jpeg">
+    <style>
+        /* Paste your CSS code here */
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            color: white;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 20px;
+            background-color: black;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+
+        .logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav ul li {
+            display: inline;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        nav ul li a:hover {
+            background-color: #5d4037;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .content-wrapper {
+            position: relative;
+            z-index: 2;
+        }
+
+        .fullscreen-container {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .fullscreen-gif {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1;
+        }
+
+        .elementor-widget-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: white;
+            font-size: 3em;
+            font-weight: bold;
+        }
+
+        .contact-section {
+            display: flex;
+            padding: 20px;
+            background-color: white;
+            color: black;
+        }
+
+        .contact-form, .rating-section {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .contact-form form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .contact-form input, .contact-form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-form button {
+            padding: 10px;
+            font-size: 1em;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #5d4037;
+        }
+
+        .google-map-container {
+            width: 100%;
+            height: 400px;
+            margin-top: 20px;
+        }
+
+        footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 50px 20px;
+            background-color: black;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+        }
+
+        .footer-logo img {
+            height: 100px;
+            margin-left: 20px;
+        }
+
+        .address {
+            text-align: center;
+        }
+
+        .social-media img {
+            height: 30px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        .card {
+            max-width: 33rem;
+            background: #fff;
+            margin: 0 1rem;
+            padding: 1rem;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            border-radius: 0.5rem;
+            align: center;
+        }
+
+        .star {
+            font-size: 10vh;
+            cursor: pointer;
+            align: center;
+        }
+
+        .one {
+            color: rgb(255, 0, 0);
+        }
+
+        .two {
+            color: rgb(255, 106, 0);
+        }
+
+        .three {
+            color: rgb(251, 255, 120);
+        }
+
+        .four {
+            color: rgb(255, 255, 0);
+        }
+
+        .five {
+            color: rgb(24, 159, 14);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Cafe Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="cafe.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="shop.html">Shop</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-wrapper">
+        <div class="fullscreen-container">
+            <img src="slide.gif" alt="Fullscreen GIF" class="fullscreen-gif">
+            <div class="elementor-widget-container">
+                CONTACT US
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <div class="contact-form">
+                <form>
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <textarea placeholder="Your Message" rows="5" required></textarea>
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
+            <div class="rating-section">
+                <div class="card">
+                    <h2>Rate Our Service</h2>
+                    <div class="stars">
+                        <span class="star" onclick="gfg(1)">&#9733;</span>
+                        <span class="star" onclick="gfg(2)">&#9733;</span>
+                        <span class="star" onclick="gfg(3)">&#9733;</span>
+                        <span class="star" onclick="gfg(4)">&#9733;</span>
+                        <span class="star" onclick="gfg(5)">&#9733;</span>
+                    </div>
+                    <div id="output"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Google Map -->
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15449.864771625626!2d121.0526532!3d14.5153058!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397cfb166304535%3A0x8067ea976a73a1b4!2sBLK%2021%20Lot%2051%20Phase%202%20EP%20Housing%20Brgy%20Pinagsama!5e0!3m2!1sen!2sph!4v1718220146327!5m2!1sen!2sph" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.jpg" alt="Cafe Logo">
+        </div>
+        <div class="address">
+            Block 21 Lot 4 Italy St. EP Housing Brgy Pinagsama Phase 2, Taguig, Philippines
+            <br>
+            <br>
+            0915-895-6883
+            <br>
+            <br>
+            cafeprince@gmail.com
+        </div>
+        <div class="social-media">
+    <a href="https://www.instagram.com/cafeprinceph.official/" target="_blank">
+        <img src="ig.png" alt="Instagram">
+    </a>
+    <a href="https://www.facebook.com/cafeprince.ph/" target="_blank">
+        <img src="fb.png" alt="Facebook">
+    </a>
+</div>
+
+
+    <script>
+        // Paste your JavaScript code here
+        // To access the stars
+        let stars = document.getElementsByClassName("star");
+        let output = document.getElementById("output");
+
+        // Function to update rating
+        function gfg(n) {
+            remove();
+            for (let i = 0; i < n; i++) {
+                if (n == 1) cls = "one";
+                else if (n == 2) cls = "two";
+                else if (n == 3) cls = "three";
+                else if (n == 4) cls = "four";
+                else if (n == 5) cls = "five";
+                stars[i].className = "star " + cls;
+            }
+            output.innerText = "Rating is: " + n + "/5";
+        }
+
+        // To remove the pre-applied styling
+        function remove() {
+            let i = 0;
+            while (i < 5) {
+                stars[i].className = "star";
+                i++;
+            }
+        }
+    </script>
+</body>
+</html>
