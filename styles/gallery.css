@@ -13,8 +13,9 @@ header {
 
 /* Gallery page navigation hover effect */
 nav ul li a:hover {
-    background-color: rgba(128, 128, 128, 0.5);
+    background-color: #5d4037;
     border-radius: 5px;
+    color: white;
 }
 
 /* ===== PHOTO GALLERY LAYOUT ===== */
