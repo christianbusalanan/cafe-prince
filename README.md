@@ -233,7 +233,7 @@ All JavaScript uses vanilla JS with no external dependencies. Code is organized 
 **Form Fields Processed:**
 - First/Last Name, Email, Phone, Address, Payment Method
 
-## 🔧 Technical Implementation
+## Technical Implementation
 
 ### Code Quality Standards
 All JavaScript files follow consistent documentation practices:
@@ -309,56 +309,7 @@ Each page has dedicated CSS with section comments:
 - Menu items grid
 - Shopping cart integration
 
-## Code Quality Improvements
-
-### Addressing Mentor Feedback
-
-✅ **CSS Organization - FIXED**
-- **Before**: Inline CSS repeated in every HTML file
-- **After**: Modular CSS with global.css + 9 page-specific files
-
-✅ **Code Comments - ADDED**
-- Every CSS file has comprehensive section comments
-- Every JavaScript file has detailed function documentation
-- JSDoc-style comments for all functions with parameters
-- Clear explanations of styling and logic purposes
-- Easy to understand for team collaboration
-
-✅ **File Structure - ORGANIZED**
-- `styles/` directory for all CSS files
-- `scripts/` directory for all JavaScript files
-- `images/` directory for all assets
-- Clean separation of concerns
-
-✅ **Maintainability - IMPROVED**
-- Single source of truth for global styles
-- Modular JavaScript with separated concerns
-- Easy to update common elements
-- Reduced code duplication by ~80%
-- Consistent documentation across HTML, CSS, and JavaScript
-
-### Before vs After
-
-**Before:**
-```html
-<!-- 500+ lines of repeated CSS in EVERY file -->
-<style>
-    header { display: flex; ... }
-    footer { display: flex; ... }
-    nav ul { list-style: none; ... }
-    /* Duplicated across 9 HTML files */
-</style>
-```
-
-**After:**
-```html
-<!-- Clean, maintainable structure -->
-<link rel="stylesheet" href="styles/global.css">
-<link rel="stylesheet" href="styles/shop.css">
-<script src="scripts/shop.js"></script>
-```
-
-## 📋 Features by Page
+## Features by Page
 
 ### Homepage (index.html)
 - Hero section with fullscreen GIF background
@@ -439,7 +390,7 @@ Mobile breakpoint at 768px with adjustments for:
 - Email: cafeprince@gmail.com
 - Address: Block 21 Lot 4 Italy St. EP Housing Brgy Pinagsama Phase 2, Taguig, Philippines
 
-## 👨‍💻 Development Team
+## Development Team
 
 **Christian Busalanan**
 - GitHub: @lr.cnbusalanan@mmdc.mcl.edu.ph
