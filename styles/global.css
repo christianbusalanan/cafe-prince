@@ -57,6 +57,13 @@ nav ul li a:hover {
     color: white;
 }
 
+/* New Navigation */
+.navbar {
+  background-color: rgb(0, 0, 0) !important;
+}
+
+
+
 /* ===== FOOTER STYLES ===== */
 /* Main footer container */
 footer {
@@ -240,5 +247,33 @@ footer {
     .gallery-header {
         flex-direction: column;
         gap: 10px;
+    }
+
+    .custom-navbar {
+    background-color: rgb(0,0,0) !important;
+    z-index: 1000 !important;
+    position: relative;
+    }
+
+    .container {
+    position: relative;
+    z-index: 1;
+    margin-top: 100px; /* pushes content below navbar */
+    }
+
+    /* ===== ACTIVE NAV LINK FIX ===== */
+    .custom-navbar .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important; /* default nav color */
+    font-weight: normal;
+    transition: color 0.3s, font-weight 0.3s;
+    }
+
+    .custom-navbar .nav-link:hover {
+    color: #5d4037 !important; /* brown hover */
+    }
+
+    .custom-navbar .nav-link.active {
+    color: #ffffff !important;  /* pure white for selected link */
+    font-weight: bold !important;
     }
 }
