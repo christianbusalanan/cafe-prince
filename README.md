@@ -13,13 +13,13 @@ A modern cafe website showcasing products, services, and online ordering capabil
 - **Responsive Design**: Mobile-friendly layout across all pages
 - **Social Media Integration**: Links to Instagram and Facebook pages
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla JS)
 - **Styling**: Modular CSS architecture with global and page-specific stylesheets
 - **Storage**: Browser LocalStorage for user authentication
 - **Assets**: Organized image directory structure
-- **Comments**: Comprehensive CSS comments for maintainability
+- **Comments**: Comprehensive CSS and JavaScript comments for maintainability
 
 ## Project Structure
 
@@ -95,8 +95,10 @@ cafe-prince/
 │       ├── Shopping cart sidebar
 │       └── Card transitions
 │
-├── JavaScript Files
-│   └── script.js          # Authentication and cart logic
+├── JavaScript Files (scripts/)
+│   ├── shop.js            # Shopping cart functionality
+│   ├── contact.js         # Star rating system
+│   └── checkout.js        # Order form and receipt popup
 │
 └── Images (images/)
     ├── logo.jpg           # Main cafe logo
@@ -127,11 +129,25 @@ cafe-prince/
    ├── styles/
    │   ├── global.css
    │   └── [page-specific CSS files]
+   ├── scripts/
+   │   └── [JavaScript files]
    └── images/
        └── [all image assets]
    ```
 
-3. **Open in a web browser**
+3. **Add JavaScript to pages**
+   ```html
+   <!-- Shop page -->
+   <script src="scripts/shop.js"></script>
+   
+   <!-- Contact page -->
+   <script src="scripts/contact.js"></script>
+   
+   <!-- Checkout page -->
+   <script src="scripts/checkout.js"></script>
+   ```
+
+4. **Open in a web browser**
    ```bash
    # Using Python
    python -m http.server 8000
@@ -143,10 +159,94 @@ cafe-prince/
    # Right-click index.html → "Open with Live Server"
    ```
 
-4. **Navigate the site**
+5. **Navigate the site**
    - Homepage: `http://localhost:8000/index.html`
    - Shop: `http://localhost:8000/shop.html`
    - Gallery: `http://localhost:8000/gallery.html`
+
+## JavaScript Architecture
+
+### Overview
+All JavaScript uses vanilla JS with no external dependencies. Code is organized into three modular files with comprehensive comments following the same documentation standards as the CSS.
+
+### shop.js - Shopping Cart System
+**Complete e-commerce functionality with 22 products**
+
+**Core Features:**
+- Product data array with 16 beverages and 6 cookies
+- Dynamic product grid generation on page load
+- Add to cart with visual confirmation feedback
+- Quantity adjustment (+/- buttons)
+- Real-time price calculation
+- Cart sidebar toggle (slides in from right)
+- Empty cart validation before checkout
+- Automatic redirect to checkout page
+
+**Key Functions:**
+- `initApp()` - Generates product display from data array
+- `addToCart(key, btn)` - Adds item to cart with confirmation
+- `reloadCart()` - Updates cart display and totals
+- `changeQuantity(key, quantity)` - Adjusts item quantities or removes items
+- `redirectToCheckout()` - Validates cart and navigates to checkout
+
+**Product Data Structure:**
+```javascript
+{ 
+  id: 1, 
+  name: 'Spanish Latte', 
+  image: 'images/list1.png', 
+  price: 125 
+}
+```
+
+### contact.js - Interactive Rating System
+**5-star rating functionality with color-coded feedback**
+
+**Core Features:**
+- Click-based star rating (1-5 stars)
+- Dynamic color changes based on rating level
+- Real-time rating display update
+- Reset functionality for re-rating
+
+**Key Functions:**
+- `gfg(n)` - Updates star display for rating value 1-5
+- `remove()` - Clears all star styling classes
+
+**Rating Classes:**
+- `one` through `five` - Color-coded rating states
+
+### checkout.js - Order Processing
+**Order form handling with confirmation popup**
+
+**Core Features:**
+- Form data extraction and validation
+- Order timestamp generation
+- Receipt popup modal display
+- Order confirmation display
+- Return to homepage navigation
+
+**Key Functions:**
+- `showPopup(event)` - Displays order confirmation with form data
+- `closePopup()` - Hides confirmation modal
+- `redirectToHome()` - Returns user to homepage
+
+**Form Fields Processed:**
+- First/Last Name, Email, Phone, Address, Payment Method
+
+## 🔧 Technical Implementation
+
+### Code Quality Standards
+All JavaScript files follow consistent documentation practices:
+- **Section headers**: `/* ===== SECTION NAME ===== */`
+- **Function documentation**: JSDoc-style comments with parameters
+- **Inline comments**: Explaining complex logic
+- **Clear variable naming**: Descriptive and purposeful
+
+### No External Dependencies
+- **Pure vanilla JavaScript** - No jQuery, React, or frameworks
+- **No npm packages** - package-lock.json is empty
+- **Browser-native APIs only** - localStorage, DOM manipulation
+- **Lightweight and fast** - No bundle size concerns
 
 ## CSS Architecture
 
@@ -213,24 +313,29 @@ Each page has dedicated CSS with section comments:
 
 ### Addressing Mentor Feedback
 
-**CSS Organization - FIXED**
+✅ **CSS Organization - FIXED**
 - **Before**: Inline CSS repeated in every HTML file
 - **After**: Modular CSS with global.css + 9 page-specific files
 
-**Code Comments - ADDED**
+✅ **Code Comments - ADDED**
 - Every CSS file has comprehensive section comments
-- Clear explanations of styling purposes
+- Every JavaScript file has detailed function documentation
+- JSDoc-style comments for all functions with parameters
+- Clear explanations of styling and logic purposes
 - Easy to understand for team collaboration
 
-**File Structure - ORGANIZED**
+✅ **File Structure - ORGANIZED**
 - `styles/` directory for all CSS files
+- `scripts/` directory for all JavaScript files
 - `images/` directory for all assets
 - Clean separation of concerns
 
- **Maintainability - IMPROVED**
+✅ **Maintainability - IMPROVED**
 - Single source of truth for global styles
+- Modular JavaScript with separated concerns
 - Easy to update common elements
 - Reduced code duplication by ~80%
+- Consistent documentation across HTML, CSS, and JavaScript
 
 ### Before vs After
 
@@ -250,9 +355,10 @@ Each page has dedicated CSS with section comments:
 <!-- Clean, maintainable structure -->
 <link rel="stylesheet" href="styles/global.css">
 <link rel="stylesheet" href="styles/shop.css">
+<script src="scripts/shop.js"></script>
 ```
 
-## Features by Page
+## 📋 Features by Page
 
 ### Homepage (index.html)
 - Hero section with fullscreen GIF background
@@ -333,7 +439,7 @@ Mobile breakpoint at 768px with adjustments for:
 - Email: cafeprince@gmail.com
 - Address: Block 21 Lot 4 Italy St. EP Housing Brgy Pinagsama Phase 2, Taguig, Philippines
 
-## Developer
+## 👨‍💻 Development Team
 
 **Christian Busalanan**
 - GitHub: @lr.cnbusalanan@mmdc.mcl.edu.ph
@@ -347,9 +453,18 @@ Mobile breakpoint at 768px with adjustments for:
 **Jason Bryan Tan**
 - GitHub: @lr.jbtan@mmdc.mcl.edu.ph
   
-**John vincent Tapec**
+**John Vincent Tapec**
 - GitHub: @lr.jvtapec@mmdc.mcl.edu.ph
 
 **Mikko Jerome Bautista**
 - GitHub: @lr.mjbautista@mmdc.mcl.edu.ph
 
+## Key Takeaways
+
+This project demonstrates:
+- **Modular Architecture**: Separation of HTML, CSS, and JavaScript into organized files
+- **Code Organization**: Proper file structure with dedicated directories
+- **Comprehensive Documentation**: Clear comments throughout CSS and JavaScript files
+- **Vanilla JavaScript**: No dependencies, pure browser-native code
+- **Responsive Design**: Mobile-first approach with breakpoints
+- **Maintainability**: Easy to update and extend codebase
