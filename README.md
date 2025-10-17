@@ -13,7 +13,7 @@ A modern cafe website showcasing products, services, and online ordering capabil
 - **Responsive Design**: Mobile-friendly layout across all pages
 - **Social Media Integration**: Links to Instagram and Facebook pages
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **Frontend**: HTML5, CSS3, JavaScript (Vanilla JS)
 - **Styling**: Modular CSS architecture with global and page-specific stylesheets
