@@ -107,27 +107,6 @@ body {
 }
 
 /* ===== SHOPPING CART SIDEBAR ===== */
-/* Cart sidebar container */
-.card {
-    position: fixed;
-    top: 0;
-    left: 100%;
-    width: 500px;
-    background-color: black;
-    height: 100vh;
-    transition: 0.5s;
-}
-
-/* Active cart state - slide in from right */
-.active .card {
-    left: calc(100% - 500px);
-}
-
-/* Push main content when cart is active */
-.active .container {
-    transform: translateX(-200px);
-}
-
 /* Cart header */
 .card h1 {
     color: #E8BC0E;
@@ -140,9 +119,9 @@ body {
 }
 
 /* Cart checkout section */
-.card .checkOut {
-    position: absolute;
-    bottom: 0;
+.offcanvas .checkOut {
+    position: absolute; /* Stick to the offcanvas parent */
+    bottom: 0;          /* Align to the bottom */
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -205,4 +184,50 @@ body {
     margin-top: 10px;
     border-radius: 5px;
     text-align: center;
+}
+
+/* ===== OFF-CANVAS FOOTER (CHECKOUT) ===== */
+
+/* Styles the footer container inside the offcanvas */
+.offcanvas .checkOut {
+    position: absolute; /* Sticks to the bottom of the offcanvas */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    border-top: 1px solid #495057; /* A subtle separator line */
+}
+
+/* Common style for the 'Total' and 'Checkout' elements */
+.offcanvas .checkOut .total,
+.offcanvas .checkOut .checkout-button {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0 20px;
+}
+
+/* Specific style for the 'Total' div */
+.offcanvas .checkOut .total {
+    background-color: transparent;
+    color: #fff; /* White text (since the bg is dark) */
+    justify-content: flex-start; /* Align text to the left */
+}
+
+/* Specific style for the 'Checkout' button */
+.offcanvas .checkOut .checkout-button {
+    background-color: #E8BC0E; /* Your theme's yellow color */
+    color: #1C1F25; /* Dark text */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.offcanvas .checkOut .checkout-button:hover {
+    background-color: #fff; /* White on hover */
+    color: #1C1F25;
 }

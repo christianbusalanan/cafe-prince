@@ -2,26 +2,12 @@
 
 /* ===== SHOPPING CART FUNCTIONALITY ===== */
 // DOM element references
-let openShopping = document.querySelector('.nav-link img[alt="Cart"]');
-let closeShopping = document.querySelector('.closeShopping');
 let list = document.querySelector('.list');
 let listCard = document.querySelector('.listCard');
-let body = document.querySelector('body');
 let total = document.querySelector('.total');
 let quantity = document.querySelector('.quantity');
 let warning = document.querySelector('.warning');
 
-
-/* ===== EVENT LISTENERS ===== */
-// Open shopping cart sidebar
-openShopping.addEventListener('click', () => {
-    body.classList.add('active');
-});
-
-// Close shopping cart sidebar
-closeShopping.addEventListener('click', () => {
-    body.classList.remove('active');
-});
 
 /* ===== PRODUCT DATA ===== */
 let products = [
@@ -53,7 +39,7 @@ let products = [
 ];
 
 // Shopping cart storage
-let listCards = [];
+let listCards = JSON.parse(localStorage.getItem('myCart')) || [];
 
 /* ===== PRODUCT DISPLAY FUNCTIONS ===== */
 /**
@@ -70,6 +56,7 @@ function initApp() {
             <button onclick="addToCart(${key}, this)">Add To Cart</button>
             <div class="confirmation">Added to Cart</div>`;
         list.appendChild(newDiv);
+        reloadCart();
     });
 }
 
@@ -90,6 +77,7 @@ function addToCart(key, btn) {
     }
 
     // Update cart display
+    saveCart();
     reloadCart();
 
     // Show confirmation feedback
@@ -151,6 +139,7 @@ function changeQuantity(key, quantity) {
     }
 
     // Refresh cart display
+    saveCart();
     reloadCart();
 }
 
@@ -158,7 +147,10 @@ function changeQuantity(key, quantity) {
 /**
  * Redirect to checkout page if cart has items
  */
-function redirectToCheckout() {
+function redirectToCheckout(event) {
+    // Prevent the link's default click behavior
+    if (event) event.preventDefault();
+
     let totalAmount = parseInt(total.innerText.split('₱')[1] || '0');
     
     if (totalAmount === 0) {
@@ -167,11 +159,16 @@ function redirectToCheckout() {
         setTimeout(() => {
             warning.style.display = 'none';
         }, 2000);
-        return;
+        return; // Stop here if cart is empty
     }
     
-    // Redirect to checkout page
+    // If cart is not empty, proceed to checkout
     window.location.href = 'checkout.html';
+}
+
+/* ===== LOCAL STORAGE FUNCTIONS ===== */
+function saveCart() {
+    localStorage.setItem('myCart', JSON.stringify(listCards));
 }
 
 /* ===== INITIALIZATION ===== */

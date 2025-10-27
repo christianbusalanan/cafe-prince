@@ -38,7 +38,7 @@
 
             <!-- 🛒 Cart icon -->
             <li class="nav-item position-relative ms-3">
-              <a class="nav-link" href="checkout.html">
+              <a class="nav-link" href="#shoppingCartSidebar" data-bs-toggle="offcanvas" role="button">
                 <img src="images/cart.jpg" alt="Cart" width="35" height="35">
                 <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger quantity">0</span>
               </a>
@@ -53,14 +53,24 @@
         <div class="list"></div>
     </div>
 
-    <div class="card">
-        <h1>Cart</h1>
-        <ul class="listCard"></ul>
-        <div class="checkOut">
-            <div class="total" onclick="redirectToCheckout()">Total: 0</div>
-            <div class="closeShopping">Close</div>
-        </div>
-        <div class="warning">Add an item to the cart</div>
+    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="shoppingCartSidebar" aria-labelledby="shoppingCartLabel">
+      
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="shoppingCartLabel">Your Cart</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      
+      <div class="offcanvas-body">
+        <ul class="listCard"></ul> <div class="warning">Add an item to the cart</div>
+      </div>
+      
+      <div class="checkOut">
+          <div class="total">Total: 0</div>
+          
+          <a href="checkout.html" class="checkout-button" onclick="redirectToCheckout(event)">
+              Checkout
+          </a>
+      </div>
     </div>
 
     <!-- ===== FOOTER ===== -->
